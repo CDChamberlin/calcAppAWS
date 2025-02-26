@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Collin Chamberlin" />
+        <title>Bootstrap Calculator</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        ></script>
+        <script defer src="js/calculator.js"></script>
+    </head>
+    <body class="container py-5">
+        <h1 class="text-center mb-4">Calculator</h1>
+        <div class="card shadow-lg p-4">
+            <div class="mb-3">
+                <label for="result" class="form-label">Result</label>
+                <input type="text" class="form-control" id="result" readonly />
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <form id="Calcs">
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="operator"
+                                id="plus"
+                                value="+"
+                                checked
+                            />
+                            <label class="form-check-label" for="plus">+</label>
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="operator"
+                                id="minus"
+                                value="-"
+                            />
+                            <label class="form-check-label" for="minus"
+                                >-</label
+                            >
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="operator"
+                                id="multiply"
+                                value="*"
+                            />
+                            <label class="form-check-label" for="multiply"
+                                >×</label
+                            >
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="operator"
+                                id="division"
+                                value="/"
+                            />
+                            <label class="form-check-label" for="division"
+                                >÷</label
+                            >
+                        </div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary mt-3 w-100"
+                            onclick="calculates(event)"
+                        >
+                            Equals
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <label for="num1" class="form-label"
+                            >First Number</label
+                        >
+                        <input type="number" id="num1" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="num2" class="form-label"
+                            >Second Number</label
+                        >
+                        <input type="number" id="num2" class="form-control" />
+                    </div>
+                    <button id="resetBtn" class="btn btn-secondary w-100">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+        <pre id="log" class="mt-4 p-3 bg-light border rounded"></pre>
+    </body>
+</html>

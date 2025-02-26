@@ -2,7 +2,7 @@ import Calculator from "../libraries/calculator.js";
 
 const myCalc = new Calculator();
 
-const performCalculation = (operation) => (req, res) => {
+const performCalculation = (operation) => async (req, res) => {
     const num1 = parseFloat(req.query.num1);
     const num2 = parseFloat(req.query.num2);
 
@@ -21,7 +21,7 @@ const performCalculation = (operation) => (req, res) => {
         return res.status(400).json({ error: "Invalid operation" });
     }
 
-    const result = operationsMap[operation].call(myCalc, num1, num2);
+    const result = await operationsMap[operation].call(myCalc, num1, num2);
     res.status(200).json({ result });
 };
 
